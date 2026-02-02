@@ -21,5 +21,5 @@ export const NO_BUTTON_PHRASES: string[] = [
 export const GIFS = {
     INITIAL: "https://media.tenor.com/p0WL4ZA2WNUAAAAj/peach-goma-peach-and-goma.gif",
     SAD: "https://media.tenor.com/PAyE85Ez53oAAAAj/mochi-mochimochi.gif",
-    SUCCESS: "https://media.tenor.com/ivKWdfdbV3EAAAAj/goma-goma-cat.gif"
+    SUCCESS: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXhwYnVhaHpwOTVkbmgzZTBsMXRwcnYwN29vbDFianA1enpuZnV1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Cfh5zkwHQXVcTXocei/giphy.gif"
 };

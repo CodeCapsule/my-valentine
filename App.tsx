@@ -4,7 +4,7 @@ import { NO_BUTTON_PHRASES, GIFS } from './constants';
 
 const HeartConfetti: React.FC = () => {
   const hearts = useMemo(() => 
-    Array.from({ length: 30 }).map((_, i) => ({
+    Array.from({ length: 50 }).map((_, i) => ({
       id: i,
       style: {
         left: `${Math.random() * 100}vw`,
@@ -32,12 +32,14 @@ const App: React.FC = () => {
   const [musicPlayed, setMusicPlayed] = useState(false);
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const yesSoundRef = useRef<HTMLAudioElement | null>(null);
   const yesButtonRef = useRef<HTMLButtonElement>(null);
   const noButtonRef = useRef<HTMLButtonElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     audioRef.current = document.getElementById('bg-music') as HTMLAudioElement;
+    yesSoundRef.current = document.getElementById('yes-sound') as HTMLAudioElement;
   }, []);
 
   // Effect to reposition the 'No' button and avoid collision
@@ -99,6 +101,9 @@ const App: React.FC = () => {
 
   const handleYesClick = () => {
     playMusicOnce();
+    if (yesSoundRef.current) {
+      yesSoundRef.current.play().catch(e => console.error("Sound effect failed to play:", e));
+    }
     setIsYesPressed(true);
   };
 
